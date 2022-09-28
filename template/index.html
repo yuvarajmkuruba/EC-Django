@@ -1,14 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="static/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>M Yuvaraj</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-    <h3>Hello King</h3>
-</body>
+  </head>
+  <body>
+    <!-- {% for i in object %}
+    <div class="container">
+        <h1>{{ i.Name }}</h1>
+          <h5>{{ i.Age }}</h5>
+    </div>
+    {% endfor %} -->
+    <nav class="row" style="background: grey; color: white;">
+        <div text-align="center"><h1 class="col-md-3 text-center">Weather Detector</h1></div>
+      </nav>
+      <br />
+      <br />
+      <center class="row">
+        <form action="" method="post" class="col-md-6 col-md-offset-3">
+          {% csrf_token %}
+          <div class="input-group">
+            <input type="text" class="form-control" name="city" placeholder="Search">
+            <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" >
+                <!-- <i class="glyphicon glyphicon-search"></i> -->
+              </button>
+            </div>
+            <form>
+      </center>
+      <div class="row">
+        {% if data.country_code %}
+        <div class="col-md-6 col-md-offset-3">
+          <h1>{{city}}</h1>
+          <h3>country code : {{data.country_code}}</h1>
+            <h5>coordinate : {{data.coordinate}}</h5>
+            <h5>temp : {{data.temp}}</h5>
+            <h5>pressure : {{data.pressure}} </h5>
+            <h5>humidity : {{data.humidity}}</h5>
+        </div>
+        {% endif %}
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
